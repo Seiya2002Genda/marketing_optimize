@@ -1,0 +1,2 @@
+# marketing_optimize
+ChatGPTを使ったマーケティング最適化
