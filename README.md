@@ -1,111 +1,132 @@
-📈 Marketing Budget Optimization Tool
-This Python script is designed to help marketers and data analysts optimize marketing budget allocation across multiple channels and customer segments.
-It aims to maximize the total expected LTV (Lifetime Value) using linear programming.
+# 📈 Marketing Budget Optimization Tool
 
-🚀 Features
-Interactive user input:
+This Python script is designed to help **marketers and data analysts** optimize marketing budget allocation across multiple channels and customer segments.  
+It aims to **maximize the total expected LTV (Lifetime Value)** using **linear programming**.
 
-📢 Marketing channels (select or input custom)
+---
 
-👥 Customer segments (select or input custom)
+## 🚀 Features
 
-LTV calculation based on:
+### Interactive user input:
 
-Unit Price × Purchase Frequency × Customer Duration
+- 📢 **Marketing channels** (select or input custom)  
+- 👥 **Customer segments** (select or input custom)
 
-CVR (Conversion Rate) input for every Channel × Segment combination
+### LTV calculation based on:
 
-Budget configuration:
+- **Unit Price × Purchase Frequency × Customer Duration**
 
-Individual min/max budgets per channel
+### CVR (Conversion Rate) input for every Channel × Segment combination
 
-A total marketing budget constraint
+### Budget configuration:
 
-Linear optimization using scipy.optimize.linprog
+- **Individual min/max budgets** per channel  
+- **A total marketing budget constraint**
 
-Outputs:
+### Linear optimization using `scipy.optimize.linprog`
 
-💰 Optimal budget allocation across channels
+### Outputs:
 
-🎯 Total expected LTV
+- 💰 **Optimal budget allocation across channels**  
+- 🎯 **Total expected LTV**  
+- 👥 **Estimated number of conversions per segment**
 
-👥 Estimated number of conversions per segment
+---
 
-🧮 Mathematical Model
-1. LTV Calculation
-Each customer segment’s LTV is calculated using:
-LTV = Unit Price × Purchase Frequency × Customer Duration
+## 🧮 Mathematical Model
+
+### 1. LTV Calculation
+
+Each customer segment’s LTV is calculated using:  
+**LTV = Unit Price × Purchase Frequency × Customer Duration**
 
 This gives the total lifetime value contribution per converted user.
 
-2. Expected Return Per Yen
-The expected LTV return per yen for each channel is computed as:
-Expected Return = CVR × LTV (dot product)
+---
+
+### 2. Expected Return Per Yen
+
+The expected LTV return per yen for each channel is computed as:  
+**Expected Return = CVR × LTV (dot product)**
 
 Where CVR is the conversion rate of each channel for each segment.
 
-3. Linear Optimization
-Objective: Maximize total expected LTV given budget constraints.
+---
 
-Formulated as a linear programming problem:
+### 3. Linear Optimization
 
-Objective Function:
-maximize Σ (budgetᵢ × expected_returnᵢ)
+**Objective:** Maximize total expected LTV given budget constraints.
 
-Subject to:
+Formulated as a **linear programming problem**:
 
-Total budget: Σ budgetᵢ ≤ Total Budget
+**Objective Function:**  
+**maximize Σ (budgetᵢ × expected_returnᵢ)**
 
-Per channel: Minᵢ ≤ budgetᵢ ≤ Maxᵢ
+**Subject to:**
 
-📊 Sample Output
-✅ Optimal Budget Allocation:
-SNS: ¥120,000
+- **Total budget:** Σ budgetᵢ ≤ Total Budget  
+- **Per channel:** Minᵢ ≤ budgetᵢ ≤ Maxᵢ
 
-TV: ¥250,000
+---
 
-Email Marketing: ¥130,000
+## 📊 Sample Output
 
-🎯 Total Expected LTV: ¥4,320,000
-💰 Actual Total Spending: ¥500,000
-👥 Estimated Number of Conversions per Segment:
-Students: approx. 850 people
+### ✅ Optimal Budget Allocation:
 
-Working Adults: approx. 620 people
+- **SNS**: ¥120,000  
+- **TV**: ¥250,000  
+- **Email Marketing**: ¥130,000  
 
-...
+---
 
-👥 Estimated Total Conversions: approx. 2,100 people
-📦 Requirements
-Python 3.7+
+### 🎯 Total Expected LTV: **¥4,320,000**  
+### 💰 Actual Total Spending: **¥500,000**
 
-numpy
+---
 
-scipy
+### 👥 Estimated Number of Conversions per Segment:
+
+- **Students**: approx. **850** people  
+- **Working Adults**: approx. **620** people  
+- ...
+
+---
+
+### 👥 Estimated Total Conversions: approx. **2,100** people
+
+---
+
+## 📝 How to Use
+
+> 1. Run the script in your terminal or IDE  
+> 2. Select or input marketing channels and customer segments  
+> 3. Input unit price, purchase frequency, and customer duration for each segment  
+> 4. Input CVR values for each Channel × Segment combination  
+> 5. Define budget constraints and total marketing budget  
+> 6. View optimal allocation results and conversion estimates  
+
+---
+
+## 📌 Notes
+
+> - This script assumes **linear behavior** and does not account for **diminishing returns**  
+> - CVR values should be between **0.0 and 1.0**  
+> - The model is ideal for **simulation and strategic planning**
+
+---
+
+## 📦 Requirements
+
+- Python 3.7+  
+- `numpy`  
+- `scipy`
 
 Install with:
 
-bash
-Copy
-Edit
+```bash
 pip install numpy scipy
-📝 How to Use
-Run the script in your terminal or IDE
 
-Select or input marketing channels and customer segments
+## 📜 License
 
-Input unit price, purchase frequency, and customer duration for each segment
-
-Input CVR values for each Channel × Segment combination
-
-Define budget constraints and total marketing budget
-
-View optimal allocation results and conversion estimates
-
-📌 Notes
-This script assumes linear behavior and does not account for diminishing returns
-
-CVR values should be between 0.0 and 1.0
-
-The model is ideal for simulation and strategic planning
-
+> This project is licensed under the **MIT License**.  
+> Feel free to use, modify, and distribute it with attribution.
