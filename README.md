@@ -115,6 +115,11 @@ Formulated as a **linear programming problem**:
 
 ---
 
+## 📜 License
+
+> This project is licensed under the **MIT License**.  
+> Feel free to use, modify, and distribute it with attribution.
+
 ## 📦 Requirements
 
 - Python 3.7+  
@@ -126,7 +131,3 @@ Install with:
 ```bash
 pip install numpy scipy
 
-## 📜 License
-
-> This project is licensed under the **MIT License**.  
-> Feel free to use, modify, and distribute it with attribution.
